@@ -6,5 +6,6 @@ public class test {
         Scanner s = new Scanner(System.in);
         System.out.println("Hola, como te llamas?");
         System.out.println("Hola, " + s.nextLine() + "!");
+        s.close();
     }
 }
