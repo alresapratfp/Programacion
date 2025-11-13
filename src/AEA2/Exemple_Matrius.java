@@ -16,6 +16,8 @@ public class Exemple_Matrius {
                 System.out.print(matriu[i][j] + " ");
             }
             System.out.println();
+                        System.out.println();
+
         }
     }
 }
