@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Canviar_Valors_Matriu {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
 
         System.out.print("Introdueix el nombre de files: ");
-        int files = scanner.nextInt();
+        int files = s.nextInt();
 
         System.out.print("Introdueix el nombre de columnes: ");
-        int columnes = scanner.nextInt();
+        int columnes = s.nextInt();
 
         int[][] matriu = new int[files][columnes];
 
@@ -19,7 +19,7 @@ public class Canviar_Valors_Matriu {
         for (int i = 0; i < files; i++) {
             for (int j = 0; j < columnes; j++) {
                 System.out.print("Valor [" + (i + 1) + "][" + (j + 1) + "]: ");
-                matriu[i][j] = scanner.nextInt();
+                matriu[i][j] = s.nextInt();
             }
         }
 
@@ -34,25 +34,22 @@ public class Canviar_Valors_Matriu {
         System.out.println("\nMatriu transformada:");
         for (int i = 0; i < files; i++) {
             for (int j = 0; j < columnes; j++) {
-                boolean filaParell = (i + 1) % 2 == 0;
-                boolean columnaParell = (j + 1) % 2 == 0;
+                boolean filaPar = (i + 1) % 2 == 0;
+                boolean columnaPar = (j + 1) % 2 == 0;
 
-                int valor;
-                if (filaParell && columnaParell) {
-                    valor = 1;
-                } else if (filaParell) {
-                    valor = 2;
-                } else if (columnaParell) {
-                    valor = 3;
+                if (!filaPar && !columnaPar) {
+                    System.out.print("1");
+                } else if (!filaPar && columnaPar) {
+                    System.out.print("2");
+                } else if (filaPar && !columnaPar) {
+                    System.out.print("3");
                 } else {
-                    valor = 4;
+                    System.out.print("4");
                 }
-
-                System.out.print(valor + " ");
             }
             System.out.println();
         }
 
-        scanner.close();
+        s.close();
     }
 }
