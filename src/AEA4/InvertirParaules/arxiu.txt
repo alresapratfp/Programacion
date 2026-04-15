@@ -1,0 +1,2 @@
+Això és un exemple d'arxiu de text.
+Línies que seran invertides.
